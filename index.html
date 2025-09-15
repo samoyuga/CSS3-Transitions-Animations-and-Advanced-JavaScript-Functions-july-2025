@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & JavaScript Animation Showcase</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS & JavaScript Animation Showcase</h1>
+        <p class="subtitle">Explore the power of combining CSS animations with JavaScript interactivity</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-spinner"></i> Animation Controls</h2>
+            <p>Use JavaScript to control CSS animations dynamically</p>
+            <div class="animation-box">
+                <div class="animated-element" id="animated-box"></div>
+            </div>
+            <div class="controls">
+                <button onclick="startAnimation('pulse')">Pulse</button>
+                <button onclick="startAnimation('bounce')">Bounce</button>
+                <button onclick="startAnimation('spin')">Spin</button>
+                <button onclick="startAnimation('color-change')">Color Change</button>
+                <button onclick="stopAnimations()">Stop All</button>
+            </div>
+            <div class="code-snippet">
+                // JavaScript function to add CSS class<br>
+                function startAnimation(animationType) {<br>
+                &nbsp;&nbsp;const box = document.getElementById('animated-box');<br>
+                &nbsp;&nbsp;box.classList.add(animationType);<br>
+            }
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-sliders-h"></i> Interactive Animation</h2>
+            <p>Control animation properties with JavaScript</p>
+            <div class="animation-box">
+                <div class="animated-element" id="interactive-box"></div>
+            </div>
+            <div class="controls">
+                <button onclick="changeAnimationDuration(1)">1s Duration</button>
+                <button onclick="changeAnimationDuration(3)">3s Duration</button>
+                <button onclick="toggleAnimationDirection()">Toggle Direction</button>
+                <button onclick="randomizeColor()">Random Color</button>
+            </div>
+            <div class="code-snippet">
+                // Change animation duration with JS<br>
+                function changeAnimationDuration(duration) {<br>
+                &nbsp;&nbsp;const box = document.getElementById('interactive-box');<br>
+                &nbsp;&nbsp;box.style.animationDuration = `${duration}s`;<br>
+                }
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-code"></i> Function Scope Demo</h2>
+            <p>Demonstrating local and global scope in JavaScript</p>
+            <div class="animation-box">
+                <div class="animated-element" id="scope-demo-box"></div>
+            </div>
+            <div class="controls">
+                <button onclick="scopeDemo()">Run Scope Demo</button>
+                <button onclick="updateAnimationCount()">Update Counter</button>
+                <button onclick="resetCounter()">Reset Counter</button>
+            </div>
+            <div class="code-snippet">
+                // Global variable<br>
+                let animationCount = 0;<br><br>
+                
+                function updateAnimationCount() {<br>
+                &nbsp;&nbsp;// Local variable with same name<br>
+                &nbsp;&nbsp;let animationCount = 5;<br>
+                &nbsp;&nbsp;animationCount++; // Affects local variable<br>
+                &nbsp;&nbsp;console.log("Local count:", animationCount);<br>
+                }
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-toggle-on"></i> Animation Toggles</h2>
+            <p>Toggle animations with classList methods</p>
+            <div class="animation-box">
+                <div class="animated-element" id="toggle-box"></div>
+            </div>
+            <div class="controls">
+                <button onclick="toggleAnimation()">Toggle Animation</button>
+                <button onclick="addMultipleAnimations()">Add Multiple</button>
+                <button onclick="checkIfAnimating()">Check Status</button>
+            </div>
+            <div class="code-snippet">
+                // Toggle animation with classList<br>
+                function toggleAnimation() {<br>
+                &nbsp;&nbsp;const box = document.getElementById('toggle-box');<br>
+                &nbsp;&nbsp;box.classList.toggle('spin');<br>
+                &nbsp;&nbsp;box.classList.toggle('color-change');<br>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Created with <span class="highlight">CSS3 animations</span> and <span class="highlight">JavaScript</span></p>
+        <p>Click on different buttons to see the animations in action!</p>
+        <p>Created by Samuel Oyuga</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
